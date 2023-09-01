@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background-color: lightblue;
+      text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #FF5733; 
+        margin-bottom: 50px;
+
+        }
+    h2  {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        }
+    h3  {
+        text-align: center;
+        color: black;
+        margin-top: 10px;
+        margin-bottom: 60px;
+        }
+    p   {
+        margin-bottom: 30px;
+        }
+    </style>
+    </head>
+
+
+
+<body>
+
+<h1>JavaScript Concepts</h1>
+<h3>James Morias</h3>
+<h1>String Methods</h1>
+<h2>The Length Method</h2>
+<p>The length of the string is:</p>
+<p id="s1"></p>
+
+<h2>The Slice() Method</h2>
+<p>The sliced (extracted) part of the string is:</p>
+<p id="s2"></p>
+
+<h2>The Substring() Method</h2>
+<p>The substring() method extract a part of a string and returns the extracted parts in a new string:</p>
+<p id="s3"></p>
+
+<h2>The Replace Method</h2>
+<p>I like Blue.</p>
+<button onclick="myFunction4()">Test</button>
+<p id="s4">I like Blue.</p>
+
+<h2>toUpperCase() Method</h2>
+<button onclick="myFunction5()">Shout</button>
+<p id="s5">shout button!</p>
+
+
+
+<h1>Number Methods<h1>
+<h2>Decimal Method</h2>
+<p>Numbers can be written with or without decimals:</p>
+<p id="n1"></p>
+
+<h2>Integer Precision Method</h2>
+<p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits:</p>
+<p id="n2"></p>
+
+<h2>Floating Point Precision Method</h2>
+<p>Floating point arithmetic is not always 100% accurate.</p>
+<p id="n3"></p>
+
+<h2>Numeric Strings Method</h2>
+<p>JavaScript will try to convert strings to numbers when dividing:</p>
+<p id="n4"></p>
+
+<h2>NaN Method</h2>
+<p>A number divided by a non-numeric string becomes NaN (Not a Number):</p>
+<p id="n5"></p>
+<p>(It said 100 / Apple, so NaN) </p>
+
+
+
+<h1>Array Methods</h1>
+<h2>The Length Method</h2>
+<p>The length property returns the length of an array:</p>
+<p id="a1"></p>
+
+<h2>The toString() Method</h2>
+<p>The toString() method returns an array as a comma separated string:</p>
+<p id="a2"></p>
+
+<h2>The pop() Method</h2>
+<p>The pop() method removes the last element from an array.</p>
+<p id="a31"></p>
+<p id="a32"></p>
+
+<h2>The push() Method</h2>
+<p>The push() method appends a new element to an array:</p>
+<p id="a41"></p>
+<p id="a42"></p>
+
+<h2>The shift() Method</h2>
+<p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
+<p id="a51"></p>
+<p id="a52"></p>
+
+
+
+<h1>Date Methods</h1>
+<h2>Using new Date(date string) Method</h2>
+<p>A date object can be created with a specified date and time:</p>
+<p id="d1"></p>
+
+<h2>New Date(year, month) Method</h2>
+<p>Using new Date(7 numbers), creates a new date object with the specified date and time:</p>
+<p id="d2"></p>
+
+<h2>New Date(milliseconds) Method</h2>
+<p>100000000000 milliseconds from January 01 1970 UTC is:</p>
+<p id="d3"></p>
+
+<h2>Displaying new Date() Method</h2>
+<p>new Date() without arguments, creates a date object with the current date and time:</p>
+<p id="d4"></p>
+
+<h2>The toDateString() Method</h2>
+<p>Convert a date to a date string:</p>
+<p id="d5"></p>
+
+
+
+<h1>Function Methods</h1>
+<h2>Function Return Method</h2>
+<p>Call a function which performs a calculation and returns the result:</p>
+<p id="f1"></p>
+
+<h2>Operator Method</h2>
+<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+<p id="f2"></p>
+
+
+<script>
+//String Method 1 - Length
+let text1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("s1").innerHTML = text1.length;
+
+//String Method 2 - Slice
+let text2 = "Apple, Banana, Kiwi";
+let part = text2.slice(7,13);
+document.getElementById("s2").innerHTML = part; 
+
+//String Method 3 - Substring
+let str = "Apple, Kiwi";
+document.getElementById("s3").innerHTML = str.substring(7,13);
+
+//String Method 4 - Replace
+function myFunction4() {
+  let text = document.getElementById("s4").innerHTML;
+  document.getElementById("s4").innerHTML =
+  text.replace("Blue","Red");
+}
+
+//String Method 5 - toUpperCase()
+function myFunction5() {
+  let text = document.getElementById("s5").innerHTML;
+  document.getElementById("s5").innerHTML =
+  text.toUpperCase();
+}
+</script>
+
+
+
+<script>
+//Number Method 1 - Decimals 
+let x = 3.14;
+let y = 3;
+document.getElementById("n1").innerHTML = x + "<br>" + y;
+
+//Number Method 2 - Integer Precision
+let x2 = 999999999999999;
+let y2 = 9999999999999999;
+document.getElementById("n2").innerHTML = x2 + "<br>" + y2;
+
+//Number Method 3 - Floating Precision
+let x3 = 0.2 + 0.1;
+document.getElementById("n3").innerHTML = "0.2 + 0.1 = " + x3;
+
+//Number Method 4 - Numeric Strings
+let x4 = "99";
+let y4 = "10";
+let z4 = x4 / y4;   
+document.getElementById("n4").innerHTML = z4;
+
+//Number Method 5 - NaN (Not a Number)
+document.getElementById("n5").innerHTML = 100 / "Apple";
+</script>
+
+
+<script>
+//Array Method 1 - Length 
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+let size = fruits1.length;
+document.getElementById("a1").innerHTML = size;
+
+//Array Method 2 - toString
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("a2").innerHTML = fruits2.toString();
+
+//Array Method 3 - pop() 
+const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("a31").innerHTML = fruits3;
+fruits3.pop();
+document.getElementById("a32").innerHTML = fruits3;
+
+//Array Method 4 - push()
+const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("a41").innerHTML = fruits4;
+fruits.push("Kiwi");
+document.getElementById("a42").innerHTML = fruits4;
+
+//Array Method 5 - shift()
+const fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("a51").innerHTML = fruits5;
+fruits5.shift();
+document.getElementById("a52").innerHTML = fruits5;
+</script>
+
+
+<script>
+//Date Method 1 - Date(date string)
+const d1 = new Date("October 13, 2014 11:13:00");
+document.getElementById("d1").innerHTML = d1;
+
+
+//Date Method 2 - new Date(year, month)
+const d2 = new Date(2018, 11, 24, 10, 33, 30, 0);
+document.getElementById("d2").innerHTML = d2;
+
+//Date Method 3 - new Date(milliseconds)
+const d3 = new Date(100000000000);
+document.getElementById("d3").innerHTML = d3;
+
+//Date Method 4 - Display new Date()
+const d4 = new Date();
+document.getElementById("d4").innerHTML = d4.toLocaleString();
+
+//Document Method 5 - Display new Date() w/ toDateString()
+const d5 = new Date();
+document.getElementById("d5").innerHTML = d5.toDateString();
+</script>
+
+
+<script>
+//Function Method 1 - Function Return
+let x5 = myFunction(4, 3);
+document.getElementById("f1").innerHTML = x5;
+
+function myFunction(a, b) {
+  return a * b;
+}
+
+//Function Method 2 - Operator 
+function toCelsius(f2) {
+  return (5/9) * (f2-32);
+}
+
+let value = toCelsius(77);
+document.getElementById("f2").innerHTML = value;
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
